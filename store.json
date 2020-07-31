@@ -1,0 +1,14 @@
+[
+  {
+    "pathId": 1,
+    "preSelection": "some fun text",
+    "postSelection": "post selection text",
+    "options": [2, 3, 4]
+  },
+  {
+    "pathId": 2,
+    "preSelection": "This is option 1",
+    "postSelection": "post selection text #2",
+    "options": null
+  }
+]
