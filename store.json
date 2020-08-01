@@ -3,12 +3,18 @@
     "pathId": 1,
     "preSelection": "some fun text",
     "postSelection": "post selection text",
-    "options": [2, 3, 4]
+    "options": [2, 3]
   },
   {
     "pathId": 2,
     "preSelection": "This is option 1",
     "postSelection": "post selection text #2",
+    "options": null
+  },
+  {
+    "pathId": 3,
+    "preSelection": "This is option 2",
+    "postSelection": "post selection text #3",
     "options": null
   }
 ]
