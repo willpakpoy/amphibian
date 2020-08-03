@@ -1,20 +1,20 @@
 [
   {
     "pathId": 1,
-    "preSelection": "some fun text",
-    "postSelection": "post selection text",
+    "preSelection": "ID #1",
+    "postSelection": "ID #1",
     "options": [2, 3]
   },
   {
     "pathId": 2,
-    "preSelection": "This is option 1",
-    "postSelection": "post selection text #2",
-    "options": null
+    "preSelection": "ID #2",
+    "postSelection": "ID #2",
+    "options": [3, 1]
   },
   {
     "pathId": 3,
-    "preSelection": "This is option 2",
-    "postSelection": "post selection text #3",
-    "options": null
+    "preSelection": "ID #3",
+    "postSelection": "ID #3",
+    "options": [1, 2]
   }
 ]
