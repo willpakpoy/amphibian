@@ -9,6 +9,7 @@ animal_database = 'paths.json' # we define a global variable with the file name 
 recent_selections_database = 'store.json'
 default_padding = 12.5
 window = tk.Tk()
+window.geometry("600x300")
 window.title('Amphibian')
 
 def clearWindow():
@@ -68,7 +69,6 @@ def previousSelections():
         i = 0
         while i < len(selections):
             item = selections[i]
-            print(item)
             text_text = tk.Label(text=item["text"])
             user_text = tk.Label(text=item["user"])
             time_text = tk.Label(text=item["time"])
@@ -79,10 +79,8 @@ def previousSelections():
 
             i += 1
 
-        back_button = tk.Button(text="Back", command= lambda : home())
+        back_button = tk.Button(text="Back", command=lambda : home())
         back_button.grid(row=0, column=4, pady=default_padding, padx=default_padding)
-        sheet = Sheet(window, data=selections)
-        sheet.pack()
         window.mainloop()
 
 def home():
