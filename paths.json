@@ -1,0 +1,93 @@
+[
+  {
+    "pathId": 1,
+    "preSelection": "",
+    "postSelection": "Does it have limbs?",
+    "type": "continuation",
+    "options": [5, 2]
+  },
+  {
+    "pathId": 2,
+    "preSelection": "No",
+    "postSelection": "What shaped body does it have?",
+    "type": "continuation",
+    "options": [3, 4]
+  },
+  {
+    "pathId": 3,
+    "preSelection": "Long, slender, tube-shaped",
+    "postSelection": "Your animal is a caecilian!",
+    "type": "completion",
+    "options": [4, 5]
+  },
+  {  
+    "pathId": 4,
+    "preSelection": "Wide head and narrow tail",
+    "postSelection": "Your animal is a early stage tadpole!",
+    "type": "completion",
+    "options": []
+  },
+  {
+    "pathId": 5,
+    "preSelection": "Yes",
+    "postSelection": "Does it have a tail?",
+    "type": "continuation",
+    "options": [6, 7]
+  },
+  {
+    "pathId": 6,
+    "preSelection": "Yes",
+    "postSelection": "Does it's tail have fins?",
+    "type": "continuation",
+    "options": [10, 11]
+  },
+  {
+    "pathId": 7,
+    "preSelection": "No",
+    "postSelection": "What consistency is the skin of the animal?",
+    "type": "continuation",
+    "options": [8, 9]
+  },
+  {
+    "pathId": 8,
+    "preSelection": "Smooth, most skin without warts or bumps",
+    "postSelection": "Your animal is an adult frog!",
+    "type": "completion",
+    "options": []
+  },
+  {
+    "pathId": 9,
+    "preSelection": "Bumpy, dry skin with warts, shorter and thicker limbs",
+    "postSelection": "Your animal is an adult toad!",
+    "type": "completion",
+    "options": []
+  },
+  {
+    "pathId": 10,
+    "preSelection": "Yes",
+    "postSelection": "Does your animal have gills?",
+    "type": "continuation",
+    "options": [12, 13]
+  },
+  {
+    "pathId": 11,
+    "preSelection": "No",
+    "postSelection": "Your animal is an adult salamander!",
+    "type": "completion",
+    "options": []
+  },
+  {
+    "pathId": 12,
+    "preSelection": "Frilly, bush like gills protuding from neck",
+    "postSelection": "Your animal is a larval salamander!",
+    "type": "completion",
+    "options": []
+  },
+  {
+    "pathId": 13,
+    "preSelection": "No gills",
+    "postSelection": "Your animal is a late-stage tadpole!",
+    "type": "completion",
+    "options": []
+  }
+]
