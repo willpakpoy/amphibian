@@ -3,13 +3,14 @@ import tkinter as tk
 from functools import partial
 import getpass
 from datetime import datetime
-from tksheet import Sheet
 
 animal_database = 'paths.json' # we define a global variable with the file name so that we can easily change it if we need to
 recent_selections_database = 'store.json'
 default_padding = 12.5
 window = tk.Tk()
-window.geometry("600x300")
+window.minsize('600', '300')
+frog = tk.PhotoImage(file='frog.png')
+window.tk.call('wm', 'iconphoto', window._w, frog)
 window.title('Amphibian')
 
 def clearWindow():
@@ -36,8 +37,7 @@ def singleQuestion(path): # this is what will display when we want to ask a ques
             return_button = tk.Button(master=question_wrap, text="Return to home", command=lambda : home())
             return_button.pack()
         question_wrap.pack()
-        window.mainloop()
-        
+
 def closeThisSingleQuestion(option):
         singleQuestion(option)
 
@@ -57,11 +57,13 @@ def saveAnimalType(postSelection):
 
 def previousSelections():
     clearWindow()
+    previous_selections_frame = tk.Frame(window, relief='sunk')
+    previous_selections_frame.grid(sticky='news')
     with open(recent_selections_database, 'r') as f:
         selections = json.load(f)
-        text_text = tk.Label(text="Result", font="bold")
-        user_text = tk.Label(text="User", font="bold")
-        time_text = tk.Label(text="Datetime", font="bold")
+        text_text = tk.Label(master=previous_selections_frame, text="Result", font="bold")
+        user_text = tk.Label(master=previous_selections_frame, text="User", font="bold")
+        time_text = tk.Label(master=previous_selections_frame, text="Datetime", font="bold")
 
         text_text.grid(row=0, column=1, pady=default_padding, padx=default_padding)
         user_text.grid(row=0, column=2, pady=default_padding, padx=default_padding)
@@ -69,9 +71,9 @@ def previousSelections():
         i = 0
         while i < len(selections):
             item = selections[i]
-            text_text = tk.Label(text=item["text"])
-            user_text = tk.Label(text=item["user"])
-            time_text = tk.Label(text=item["time"])
+            text_text = tk.Label(master=previous_selections_frame, text=item["text"])
+            user_text = tk.Label(master=previous_selections_frame, text=item["user"])
+            time_text = tk.Label(master=previous_selections_frame, text=item["time"])
 
             text_text.grid(row=i+1, column=1, pady=default_padding, padx=default_padding)
             user_text.grid(row=i+1, column=2, pady=default_padding, padx=default_padding)
@@ -79,9 +81,10 @@ def previousSelections():
 
             i += 1
 
-        back_button = tk.Button(text="Back", command=lambda : home())
+        back_button = tk.Button(master=previous_selections_frame, text="Back", command=lambda : home())
         back_button.grid(row=0, column=4, pady=default_padding, padx=default_padding)
-        window.mainloop()
+        previous_selections_frame.grid(sticky=tk.NSEW)
+        previous_selections_frame.pack()
 
 def home():
     clearWindow()
@@ -94,6 +97,10 @@ def home():
     view_button = tk.Button(master=buttons_wrap, text="View previous results", command=lambda : previousSelections())
     view_button.pack(side=tk.LEFT, fill=tk.BOTH)
     buttons_wrap.pack(padx=default_padding, pady=default_padding)
-    window.mainloop()
+
 
 home()
+
+
+#window.configure(background='#85c986')
+window.mainloop()
